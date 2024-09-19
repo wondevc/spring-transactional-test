@@ -1,0 +1,15 @@
+services:
+  mysql:
+    restart: always
+    container_name: "example_database"
+    hostname: localhost
+    image: mysql:8.4.2
+    ports:
+      - "10400:3306"
+    environment:
+      MYSQL_DATABASE: example
+      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: 1234
+    volumes:
+      - ./mysql-data:/var/lib/mysql
